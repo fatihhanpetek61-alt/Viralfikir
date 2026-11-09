@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ViralFikir | Instagram ve TikTok İçerik Fikirleri</title>
+<meta name="description" content="Instagram Reels ve TikTok için ücretsiz video fikirleri, hazır giriş cümleleri ve içerik planları.">
+<style>
+:root{font-family:system-ui,-apple-system,Arial,sans-serif;color:#f7f7ff;background:#101020}*{box-sizing:border-box}body{margin:0}header{padding:24px 6%;background:linear-gradient(120deg,#7629ed,#e42f91)}nav{display:flex;justify-content:space-between;align-items:center;gap:12px}.logo{font-size:25px;font-weight:900}nav a{color:white;text-decoration:none;font-weight:600}.hero{max-width:900px;margin:65px auto;text-align:center;padding:0 20px}.hero h1{font-size:clamp(32px,7vw,58px);margin:0 0 15px}.hero p{color:#c7c4d9;font-size:18px}.btn{background:#fa3b9d;color:#fff;border:0;border-radius:12px;padding:14px 22px;font-size:16px;font-weight:700;cursor:pointer}.container{max-width:1100px;margin:auto;padding:0 20px 65px}.controls{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:24px}input,select{background:#202038;color:#fff;border:1px solid #4c4767;border-radius:10px;padding:14px;font-size:16px;flex:1;min-width:170px}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}.card{background:#1c1c32;border:1px solid #35314e;border-radius:18px;padding:22px}.tag{color:#ff86ca;font-size:13px;font-weight:800}.card h3{font-size:21px}.card p{color:#d1cee0;line-height:1.6}.copy{background:#333052;color:#fff;border:0;padding:10px 14px;border-radius:9px;cursor:pointer}.note{text-align:center;color:#a9a5c0;padding:30px}footer{text-align:center;border-top:1px solid #35314e;padding:24px;color:#aaa5c3}
+</style>
+</head>
+<body>
+<header><nav><div class="logo">⚡ ViralFikir</div><a href="#fikirler">Fikirleri Keşfet</a></nav></header>
+<section class="hero"><h1>Bir sonraki viral videonun fikri burada!</h1><p>Instagram Reels ve TikTok için ücretsiz, kolay uygulanabilir video fikirleri. Kategorini seç, fikrini bul, hemen çekime başla.</p><a href="#fikirler"><button class="btn">Ücretsiz Fikir Bul ↓</button></a></section>
+<main id="fikirler" class="container"><h2>🎬 İçerik Fikirleri</h2><div class="controls"><input id="search" placeholder="Fikir ara..." aria-label="Fikir ara"><select id="category" aria-label="Kategori"><option value="">Tüm kategoriler</option><option>Komedi</option><option>Günlük Yaşam</option><option>Bilgi</option><option>Yemek</option><option>Motivasyon</option><option>Teknoloji</option></select><button class="btn" id="random">🎲 Rastgele Fikir</button></div><div class="cards" id="cards"></div><p class="note">Yeni fikirler düzenli olarak eklenebilir. Beğendiğin fikri kopyalayıp kendine göre uyarlayabilirsin.</p></main>
+<footer>© 2026 ViralFikir • Ücretsiz içerik fikirleri</footer>
+<script>
+const ideas=[
+['Komedi','Beklenti vs. gerçek','Bir işe başlarken hayal ettiğin ile gerçekte yaşadığın komik farkları iki kısa sahnede göster.','Bunu sadece ben mi yaşıyorum?'],
+['Komedi','Yanlış anlaşılan mesaj','Bir mesajı tamamen yanlış anlayan kişinin komik tepkisini canlandır.','Mesajı okuyunca ben:'],
+['Komedi','Evdeki küçük krizler','Telefon şarjı %1 olduğunda yaşanan paniği abartılı bir skeçle anlat.','Şarj %1 olunca evdeki durum:'],
+['Günlük Yaşam','Önce ve sonra','Dağınık bir köşenin 15 saniyelik düzenleme dönüşümünü çek.','15 saniyede bu köşe nasıl değişti?'],
+['Günlük Yaşam','Bir günüm 20 saniyede','Günün en ilginç 5 anını hızlı kesmelerle birleştir.','Bugün başıma gelenlere inanamayacaksın!'],
+['Günlük Yaşam','Ucuz ama işe yarayan öneri','Evde sık kullandığın düşük maliyetli bir çözümü göster.','Keşke bunu daha önce bilseydim!'],
+['Bilgi','3 yaygın hata','İyi bildiğin bir konuda insanların yaptığı 3 hatayı örneklerle açıkla.','Bu 3 hatayı yapıyor olabilir misin?'],
+['Bilgi','Doğru mu yanlış mı?','Popüler bir iddiayı güvenilir kaynakla kontrol edip sonucunu paylaş.','Herkes böyle sanıyor ama doğru mu?'],
+['Bilgi','60 saniyede öğren','Karmaşık bir konuyu basit bir örnekle anlat.','Bunu 1 dakikada öğrenebilirsin.'],
+['Yemek','3 malzemeli tarif','Evde bulunan üç malzemeyle hazırlanan pratik bir tarifi adım adım göster.','Sadece 3 malzemeyle bunu yaptım!'],
+['Yemek','Bütçe dostu tabak','Uygun maliyetli bir öğünü malzeme ve porsiyon bilgisiyle göster.','Az malzemeyle doyurucu bir tabak!'],
+['Motivasyon','7 günlük mini hedef','Küçük bir alışkanlığı 7 gün dene ve günlük ilerlemeni kaydet.','7 gün boyunca bunu deniyorum.'],
+['Motivasyon','Küçük başlangıç','Büyük bir hedefe yönelik bugün atılabilecek tek küçük adımı göster.','Başlamak için mükemmel olman gerekmiyor.'],
+['Teknoloji','Telefonun gizli özelliği','Kendi telefonunda gerçekten çalışan az bilinen bir özelliği ekran kaydıyla göster.','Telefonunda bu özellik var mı?'],
+['Teknoloji','Ücretsiz araç denemesi','Ücretsiz bir dijital aracı dene; avantajlarını ve sınırlamalarını anlat.','Bu ücretsiz aracı denedim!']
+];
+const cards=document.getElementById('cards'),search=document.getElementById('search'),category=document.getElementById('category');
+function render(list){cards.innerHTML='';if(!list.length){cards.textContent='Aramana uygun fikir bulunamadı.';return}list.forEach(([cat,title,desc,hook])=>{let el=document.createElement('article');el.className='card';let tag=document.createElement('div');tag.className='tag';tag.textContent=cat;let h=document.createElement('h3');h.textContent=title;let p=document.createElement('p');p.textContent=desc;let intro=document.createElement('p');intro.textContent='🎯 Giriş: “'+hook+'”';let btn=document.createElement('button');btn.className='copy';btn.textContent='📋 Fikri Kopyala';btn.onclick=async()=>{let value=title+'\n'+desc+'\nGiriş: '+hook;try{await navigator.clipboard.writeText(value);btn.textContent='✓ Kopyalandı'}catch(e){btn.textContent='Kopyalama desteklenmiyor'}setTimeout(()=>btn.textContent='📋 Fikri Kopyala',1800)};el.append(tag,h,p,intro,btn);cards.append(el)})}
+function filter(){let q=search.value.toLocaleLowerCase('tr');render(ideas.filter(x=>(!category.value||x[0]===category.value)&&x.join(' ').toLocaleLowerCase('tr').includes(q)))}search.addEventListener('input',filter);category.addEventListener('change',filter);document.getElementById('random').onclick=()=>{let pool=ideas.filter(x=>!category.value||x[0]===category.value);render([pool[Math.floor(Math.random()*pool.length)]]);cards.scrollIntoView({behavior:'smooth',block:'start'})};render(ideas);
+</script>
+</body></html>
