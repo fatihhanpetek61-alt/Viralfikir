@@ -1,82 +1,43 @@
-<!doctype html>
+HTML
+
+<!DOCTYPE html>
 <html lang="tr">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#087443">
-<title>Sanal Kupon Analiz</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="google-site-verification" content="LA6lypOA4QP1coutmCItjaz0smtYDXnAT82KkyGxj-M">
+<title>ViralFikir | Reels ve TikTok Fikirleri</title>
 <style>
-:root{--green:#087443;--deep:#064d30;--mint:#eaf7ef;--ink:#183328;--muted:#66766d;--line:#dce9df;--white:#fff}
-*{box-sizing:border-box}body{margin:0;background:#f4f8f5;color:var(--ink);font:15px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Arial}
-header{background:linear-gradient(135deg,var(--deep),#0c8c50);color:white;padding:22px 16px 26px}
-.wrap{max-width:900px;margin:auto;padding:0 14px}
-.top{display:flex;align-items:center;justify-content:space-between;gap:12px}.brand{font-weight:850;font-size:21px;letter-spacing:-.5px}.brand span{color:#b8f2ca}
-.pill{border:1px solid #ffffff55;border-radius:999px;padding:6px 10px;font-size:12px}
-h1{font-size:26px;line-height:1.15;margin:24px 0 8px;max-width:560px}header p{margin:0;color:#d8f2e2;max-width:560px}
-.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:-16px}
-.stat,.panel,.match{background:white;border:1px solid var(--line);border-radius:16px;box-shadow:0 5px 18px #143d2410}
-.stat{padding:13px;text-align:center}.stat strong{display:block;font-size:21px;color:var(--green)}.stat small{color:var(--muted)}
-main{padding:18px 0 40px}.section-head{display:flex;align-items:center;justify-content:space-between;margin:24px 2px 12px;gap:10px}
-h2{font-size:18px;margin:0}.hint{font-size:12px;color:var(--muted)}
-.matches{display:grid;gap:12px}.match{padding:15px}.league{font-size:11px;color:var(--green);font-weight:800;text-transform:uppercase;letter-spacing:.5px}
-.teams{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:8px;margin:12px 0}.team{font-weight:750}.team:last-child{text-align:right}.vs{font-size:12px;color:var(--muted);font-weight:700}
-.options{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.pick{border:1px solid var(--line);background:#f8fbf8;border-radius:10px;padding:10px 4px;color:var(--ink);font-weight:750;cursor:pointer}.pick[aria-pressed=true]{background:var(--mint);border:2px solid var(--green);color:var(--deep);padding:9px 3px}
-button{font:inherit}.submit{width:100%;border:0;border-radius:11px;background:var(--green);color:white;padding:12px;font-weight:800;margin-top:10px;cursor:pointer}.submit:disabled{opacity:.45;cursor:not-allowed}
-.panel{padding:16px}.leader{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--line)}.leader:last-child{border:0}
-.note{font-size:12px;color:var(--muted);margin:12px 2px}.notice{background:#fff8e8;border:1px solid #f0dfb5;color:#70531a;padding:12px;border-radius:12px;font-size:12px;margin-top:18px}
-footer{text-align:center;color:var(--muted);font-size:12px;padding:24px 12px}
-@media(min-width:680px){h1{font-size:34px}.matches{grid-template-columns:1fr 1fr}.match{min-width:0}}
+body{font-family:Arial,sans-serif;background:#101827;color:white;margin:0;padding:20px}
+header{text-align:center;padding:35px 10px}
+h1{color:#a78bfa}
+.card{background:#202d42;padding:20px;border-radius:16px;margin:15px 0}
+button{background:#8b5cf6;color:white;border:0;padding:14px;border-radius:10px;font-size:16px}
 </style>
 </head>
 <body>
-<header><div class="wrap">
- <div class="top"><div class="brand">⚽ Sanal Kupon <span>Analiz</span></div><div class="pill">Ücretsiz tahmin ligi</div></div>
- <h1>Tahminini yap, puanını topla!</h1>
- <p>Maçları analiz et, sanal puanlarla yarış ve haftalık sıralamada yerini al.</p>
-</div></header>
-<main class="wrap">
- <section class="stats" aria-label="Hesap özeti">
-  <div class="stat"><strong id="points">0</strong><small>Toplam puanın</small></div>
-  <div class="stat"><strong id="count">0</strong><small>Tahminin</small></div>
-  <div class="stat"><strong id="rank">—</strong><small>Lig sıran</small></div>
- </section>
- <div class="section-head"><h2>🎯 Haftanın tahminleri</h2><span class="hint">Örnek maçlar · Demo</span></div>
- <div class="matches" id="matches"></div>
- <div class="section-head"><h2>🏆 Örnek sıralama</h2><span class="hint">Demo verisi</span></div>
- <section class="panel">
-  <div class="leader"><span>🥇 GolAvcısı</span><strong>120 puan</strong></div>
-  <div class="leader"><span>🥈 TaktikUsta</span><strong>95 puan</strong></div>
-  <div class="leader"><span>🥉 TribünAnaliz</span><strong>80 puan</strong></div>
-  <div class="leader"><span>⭐ Sen</span><strong id="myScore">0 puan</strong></div>
- </section>
- <div class="notice"><strong>Bilgilendirme:</strong> Bu demo yalnızca eğlence ve ücretsiz tahmin amacıyla hazırlanmıştır. Gerçek para, bahis oranı, para yatırma/çekme veya nakit ödül özelliği yoktur. Maç isimleri örnektir; gerçek fikstür değildir.</div>
- <p class="note">Tahminler bu tarayıcıda saklanır. Gerçek kullanıcı hesabı, ortak puan tablosu, yönetim paneli ve reklam entegrasyonu için sunucu altyapısı gerekir.</p>
-</main>
-<footer>© 2026 Sanal Kupon Analiz · Ücretsiz futbol tahmin topluluğu</footer>
+<header>
+<h1>⚡ ViralFikir</h1>
+<p>Instagram Reels ve TikTok için yaratıcı video fikirleri</p>
+<button onclick="fikir()">Rastgele Fikir Üret</button>
+</header>
+<h2>🔥 Popüler İçerik Fikirleri</h2>
+<div id="sonuc" class="card">Butona bas, yeni fikrini keşfet!</div>
+<div class="card"><h3>😂 Komedi</h3><p>Beklenti ve gerçek karşılaştırması yap.</p></div>
+<div class="card"><h3>🎬 Günlük Yaşam</h3><p>Bir gününü 20 saniyede anlat.</p></div>
+<div class="card"><h3>📱 TikTok Trendi</h3><p>Popüler bir akımı kendi tarzınla yorumla.</p></div>
 <script>
-const games=[
- {id:1,league:"Örnek Lig · Demo",home:"Kuzey FK",away:"Güney SK",date:"Örnek karşılaşma"},
- {id:2,league:"Örnek Lig · Demo",home:"Mavişehir",away:"Yeşilova",date:"Örnek karşılaşma"},
- {id:3,league:"Kupa · Demo",home:"Yıldızspor",away:"Birlik FK",date:"Örnek karşılaşma"},
- {id:4,league:"Örnek Lig · Demo",home:"Sahilspor",away:"Dağkent",date:"Örnek karşılaşma"}
+const fikirler=[
+"Önce ve sonra dönüşüm videosu çek.",
+"Komik bir günlük olayı canlandır.",
+"3 pratik telefon ipucu paylaş.",
+"Bir gününü 20 saniyede göster.",
+"Beklenti ve gerçek videosu hazırla."
 ];
-const choices=["1","X","2"];
-let picks=JSON.parse(localStorage.getItem("ska-picks")||"{}");
-function render(){
- const root=document.getElementById("matches");root.innerHTML="";
- games.forEach(g=>{
-  const card=document.createElement("article");card.className="match";
-  card.innerHTML=`<div class="league">${g.league}</div><div class="teams"><div class="team">${g.home}</div><div class="vs">VS</div><div class="team">${g.away}</div></div><div class="hint">${g.date}</div><div class="options" role="group" aria-label="${g.home} - ${g.away} tahmini">${choices.map(c=>`<button class="pick" data-choice="${c}" aria-pressed="${picks[g.id]===c}">${c==="1"?"Ev sahibi":c==="X"?"Beraberlik":"Deplasman"}</button>`).join("")}</div><button class="submit" ${picks[g.id]?"disabled":""}>${picks[g.id]?"Tahmin kaydedildi":"Tahminimi kaydet"}</button>`;
-  let selected=picks[g.id]||null;
-  card.querySelectorAll(".pick").forEach(b=>b.addEventListener("click",()=>{selected=b.dataset.choice;card.querySelectorAll(".pick").forEach(x=>x.setAttribute("aria-pressed",String(x===b)));}));
-  card.querySelector(".submit").addEventListener("click",()=>{if(!selected)return;picks[g.id]=selected;localStorage.setItem("ska-picks",JSON.stringify(picks));render();});
-  root.appendChild(card);
- });
- const n=Object.keys(picks).length;document.getElementById("count").textContent=n;
- document.getElementById("points").textContent="0";
- document.getElementById("rank").textContent="—";
- document.getElementById("myScore").textContent="0 puan";
+function fikir(){
+document.getElementById("sonuc").textContent=
+fikirler[Math.floor(Math.random()*fikirler.length)];
 }
-render();
 </script>
-</body></html>
+</body>
+</html>
